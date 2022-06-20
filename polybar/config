@@ -1,0 +1,226 @@
+; Doc: https://github.com/jaagr/polybar
+; Wiki: https://github.com/jaagr/polybar/wiki
+
+[colors]
+active = ${xrdb:active}
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
+urgent = ${xrdb:color9}
+secondary = ${xrdb:secondary}
+underline = ${xrdb:color5}
+ram = ${xrdb:color14}
+cpu = ${xrdb:color13}
+; spotify = ${xrdb:color10}
+power= ${colors.urgent}
+reboot= ${xrdb:color14}
+
+[bar/default]
+height = 40
+offset-y = 0
+top = true
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 0
+border-color = #00000000
+radius = 0
+
+line-size = 0
+
+padding-left = 0
+padding-right = 2
+module-margin = 1
+
+font-0 = JetBrains Mono:pixelsize=16;0
+font-1 = unifont:fontformat=truetype:size=14:antialias=true;0
+font-2 = siji:pixelsize=14;1
+font-3 = Font Awesome 6 Free:pixelsize=14;0
+font-4 = Font Awesome 6 Free Solid:pixelsize=14;0
+font-5 = Font Awesome 6 Brands:pixelsize=14;0
+
+modules-left = i3
+modules-center = xwindow
+modules-right = wired cpu memory pulseaudio-control date powermenu
+
+dpi-x = 96
+dpi-y = 96
+
+[bar/center]
+inherit = bar/default
+monitor = DP-0
+modules-right = wired powermenu
+modules-center = xwindow
+modules-left = i3
+tray-position = center
+tray-maxsize = 16
+tray-detached = false
+tray-padding = 0
+
+; [bar/left]
+; inherit = bar/default
+; monitor = Virtual2
+; modules-left =
+; modules-right = cpu memory i3
+; 
+; [bar/right]
+; inherit = bar/default
+; monitor = DVI-D-0
+; modules-left = i3 music
+; modules-center = date
+; modules-right = volume
+; padding-left = 3
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+format = <label-mode><label-state>
+label-mode-padding = 1
+label-focused = %index% %icon%
+label-focused-padding = 1
+label-unfocused = %index% %icon%
+label-unfocused-padding = 1
+label-visible = %index% %icon%
+label-visible-padding = 1
+label-urgent = %index% %icon%
+label-urgent-padding = 1
+label-focused-foreground = ${colors.active}
+label-focused-background = #2F3344
+label-focused-underline = ${colors.underline}
+label-visible-foreground = ${colors.active}
+label-unfocused-foreground = ${colors.secondary}
+label-urgent-foreground = ${colors.urgent}
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
+[module/xwindow]
+type = internal/xwindow
+label = [%title:0:30:...%]
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /home/sh4d0w
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}:%percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.secondary}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format = <label>
+format-prefix = ""
+label = %percentage%%
+format-foreground = ${colors.cpu}
+label-foreground = ${colors.cpu}
+label-padding = 1
+
+[module/memory]
+type = internal/memory
+interval = 2
+format = <label>
+format-prefix = ""
+label = %percentage_used%%
+format-foreground = ${colors.ram}
+label-foreground = ${colors.ram}
+label-padding = 1
+
+[module/date]
+type = internal/date
+interval=1
+date = %{F#9ECE6A} %{F#449DAB}%d/%m/%Y %{F#9D7CD8}%H:%M%{F#7AA2F7}:%S
+
+[module/pulseaudio-control]
+type = custom/script
+tail = true
+format-underline = ${colors.cyan}
+label-padding = 0
+label-foreground = ${colors.foreground}
+
+# Icons mixed from Font Awesome 5 and Material Icons
+# You can copy-paste your options for each possible action, which is more
+# trouble-free but repetitive, or apply only the relevant ones (for example
+# --sink-blacklist is only needed for next-sink).
+exec = pulseaudio-control --icons-volume "," --icon-muted "" --sink-nicknames-from "device.description" --sink-nickname "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1:Speakers" --sink-nickname "alsa_output.pci-0000_00_1f.3.iec958-stereo:Headphones" listen
+click-right = exec pavucontrol &
+click-left = pulseaudio-control togmute
+click-middle = pulseaudio-control --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-sink
+scroll-up = pulseaudio-control --volume-max 130 up
+scroll-down = pulseaudio-control --volume-max 130 down
+
+[module/wired]
+type = internal/network
+interface = enp3s0
+udspeed-minwidth = 1
+interval = 1.0
+; Available tokens:
+;   %ifname%    [wireless+wired]
+;   %local_ip%  [wireless+wired]
+;   %essid%     [wireless]
+;   %signal%    [wireless]
+;   %upspeed%   [wireless+wired]
+;   %downspeed% [wireless+wired]
+;   %linkspeed% [wired]
+; Default: %ifname% %local_ip%
+label-connected =  %ifname% %{F#DB4B4B} %downspeed:5% %{F#9ECE6A} %upspeed:5%
+format-connected = <label-connected>
+;format-connected-underline = ${colors.underline}
+label-disconnected = 
+format-disconnected = <label-disconnected>
+label-disconnected-foreground = #66ffffff
+
+[module/powermenu]
+type = custom/menu
+label-active-font = 1
+format-spacing = 1
+label-open = 
+label-open-foreground = ${colors.power}
+label-close = 
+label-close-foreground = ${colors.power}
+label-separator = |
+label-separator-foreground = ${colors.secondary}
+
+menu-0-0 = reboot
+menu-0-0-foreground = ${colors.reboot}
+menu-0-0-exec = reboot
+menu-0-1 = power off
+menu-0-1-foreground = ${colors.power}
+menu-0-1-exec = poweroff
+
+;[module/music]
+;type = custom/script
+;exec-if = ~/.config/polybar/music.sh --isPlaying
+;exec = ~/.config/polybar/music.sh --title
+;click-left = i3-msg workspace 8
+;interval = 5
+;format= <label>
+;format-foreground= ${colors.spotify}
+;label = %output%
+;
+;[module/vpn]
+;type = custom/script
+;exec =  ~/.config/polybar/vpn.sh
+;interval = 5
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+padding=1
