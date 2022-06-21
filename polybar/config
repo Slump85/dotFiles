@@ -10,12 +10,11 @@ secondary = ${xrdb:secondary}
 underline = ${xrdb:color5}
 ram = ${xrdb:color14}
 cpu = ${xrdb:color13}
-; spotify = ${xrdb:color10}
 power= ${colors.urgent}
 reboot= ${xrdb:color14}
 
 [bar/default]
-height = 40
+height = 30
 offset-y = 0
 top = true
 fixed-center = true
