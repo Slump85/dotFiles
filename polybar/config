@@ -1,5 +1,6 @@
 ; Doc: https://github.com/jaagr/polybar
 ; Wiki: https://github.com/jaagr/polybar/wiki
+; vim:set ft=dosini:
 
 [colors]
 active = ${xrdb:active}

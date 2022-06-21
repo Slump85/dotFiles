@@ -2,6 +2,9 @@
 !       urxvt
 ! ===================
 
+Urxvt.perl-ext-common:resize-font,default,url-select
+Urxvt.url-select.underline:true
+URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt*scrollBar:false
 URxvt*letterSpace:0
 URxvt*lineSpace:0
@@ -15,7 +18,7 @@ URxvt*cursorBlink:true
 URxvt.iso14755:false
 URxvt*utf8:true
 URxvt.keysym.C-equal:resize-font:bigger
-URxvt.keysym.C-parenright:resize-font:smaller
+URxvt.keysym.C-minus:resize-font:smaller
 URxvt.depth: 32
 URxvt.background:[80]#1A1B26
 
