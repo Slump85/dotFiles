@@ -167,7 +167,6 @@ for_window [class="VirtualBox Manager"] floating enable
 
 # Launching app on startup
 exec urxvt
-exec thunar
 exec brave --incognito
 exec code
 exec transmission-gtk
