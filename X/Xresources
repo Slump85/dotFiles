@@ -2,25 +2,29 @@
 !       urxvt
 ! ===================
 
-Urxvt.perl-ext-common:resize-font,default,url-select
-Urxvt.url-select.underline:true
+URxvt.perl-ext-common:resize-font,default,matcher,url-select
 URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline:true
+URxvt.matcher.button: 1
 URxvt*scrollBar:false
+URxvt*scrollBar_right:false
 URxvt*letterSpace:0
 URxvt*lineSpace:0
-URxvt.internalBorder:20
+URxvt.internalBorder:50
 URxvt.geometry: 92x24
-URxvt*font: xft:JetBrains Mono:style=Regular:size=16
+*font: xft:JetBrains Mono:style=Regular:size=16
 URxvt*boldFont: xft:JetBrains Mono:style=Bold:size=16
 URxvt*italicFont: xft:JetBrains Mono:style=Italic:size=16
 URxvt*boldItalicfont: xft:JetBrains Mono:style=Bold Italic:size=16
 URxvt*cursorBlink:true
 URxvt.iso14755:false
 URxvt*utf8:true
+URxvt.depth: 32
+URxvt.background:[60]#000000
 URxvt.keysym.C-equal:resize-font:bigger
 URxvt.keysym.C-minus:resize-font:smaller
-URxvt.depth: 32
-URxvt.background:[80]#1A1B26
+URxvt.keysym.Shift-Control-C:eval:selection_to_clipboard
+URxvt.keysym.Shift-Control-V:eval:paste_clipboard
 
 ! =================
 !       Xft
@@ -39,7 +43,7 @@ Xft.lcdfilter:lcddefault
 *active:#C0CAF5
 
 *.foreground:#C0CAF5
-*.background:#1A1B26
+*.background:#000000
 *.cursorColor:#C0CAF5
 *.fading:20
 *.fadeColor:#5A638C
