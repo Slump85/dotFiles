@@ -1,30 +1,3 @@
-! ===================
-!       urxvt
-! ===================
-
-URxvt.perl-ext-common:resize-font,default,matcher,url-select
-URxvt.url-select.launcher: /usr/bin/xdg-open
-URxvt.url-select.underline:true
-URxvt.matcher.button: 1
-URxvt*scrollBar:false
-URxvt*scrollBar_right:false
-URxvt*letterSpace:0
-URxvt*lineSpace:0
-URxvt.internalBorder:50
-URxvt.geometry: 92x24
-*font: xft:JetBrains Mono:style=Regular:size=16
-URxvt*boldFont: xft:JetBrains Mono:style=Bold:size=16
-URxvt*italicFont: xft:JetBrains Mono:style=Italic:size=16
-URxvt*boldItalicfont: xft:JetBrains Mono:style=Bold Italic:size=16
-URxvt*cursorBlink:true
-URxvt.iso14755:false
-URxvt*utf8:true
-URxvt.depth: 32
-URxvt.background:[60]#000000
-URxvt.keysym.C-equal:resize-font:bigger
-URxvt.keysym.C-minus:resize-font:smaller
-URxvt.keysym.Shift-Control-C:eval:selection_to_clipboard
-URxvt.keysym.Shift-Control-V:eval:paste_clipboard
 
 ! =================
 !       Xft
@@ -35,32 +8,55 @@ Xft.rgba:subpixel
 Xft.hinting:true
 Xft.hintstyle:hintslight
 Xft.lcdfilter:lcddefault
+*font: xft:JetBrains Mono:style=Regular:size=16
+*boldFont: xft:JetBrains Mono:style=Bold:size=16
+*italicFont: xft:JetBrains Mono:style=Italic:size=16
+*boldItalicfont: xft:JetBrains Mono:style=Bold Italic:size=16
+
+! ===================
+!       urxvt
+! ===================
+URxvt.perl-ext-common:resize-font,default,matcher,url-select
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline:true
+URxvt.matcher.button: 1
+URxvt*scrollBar:false
+URxvt*scrollBar_right:false
+URxvt*letterSpace:0
+URxvt*lineSpace:0
+URxvt.internalBorder:50
+URxvt.geometry: 92x24
+URxvt*cursorBlink:true
+URxvt.iso14755:false
+URxvt*utf8:true
+URxvt.depth: 32
+URxvt.background:[70]#000000
+
+URxvt.keysym.C-equal:resize-font:bigger
+URxvt.keysym.C-minus:resize-font:smaller
+URxvt.keysym.Shift-Control-C:eval:selection_to_clipboard
+URxvt.keysym.Shift-Control-V:eval:paste_clipboard
 
 ! ============
 !   Couleurs
 ! ============
-*secondary:#444B6A
-*active:#C0CAF5
+*.foreground: #fbf1c7
+*.background: #000000
+*.cursorColor: #ff3232
 
-*.foreground:#C0CAF5
-*.background:#000000
-*.cursorColor:#C0CAF5
-*.fading:20
-*.fadeColor:#5A638C
-
-*.color0:#6878A6
-*.color8:#5d6791
-*.color1:#DB4B4B
-*.color9:#A6333F
-*.color2:#9ECE6A
-*.color10:#9ECE6A
-*.color3:#E0AF68
-*.color11:#BBA461
-*.color4:#7AA2F7
-*.color12:#6D91DE
-*.color5:#BB9AF7
-*.color13:#9D7CD8
-*.color6:#41A6B5
-*.color14:#449DAB
-*.color7:#C0CAF5
-*.color15:#9AA5CE
+*.color0: #665c54
+*.color8: #928374
+*.color1: #ea6962
+*.color9: #ea6962
+*.color2: #a9b665
+*.color10: #a9b665
+*.color3: #e78a4e
+*.color11: #d8a657
+*.color4: #7daea3
+*.color12: #7daea3
+*.color5: #d3869b
+*.color13: #d3869b
+*.color6: #89b482
+*.color14: #89b482
+*.color7: #d4be98
+*.color15: #d4be98
