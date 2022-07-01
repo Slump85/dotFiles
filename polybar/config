@@ -8,6 +8,7 @@
     foreground = ${xrdb:foreground}
     urgent = ${xrdb:color9}
     underline = ${xrdb:color5}
+    focused = ${xrdb:focused}
     ram = ${xrdb:color14}
     cpu = ${xrdb:color13}
 
@@ -72,7 +73,7 @@
     label-visible-padding = 1
     label-urgent = %index% %icon%
     label-urgent-padding = 1
-    label-focused-foreground = ${colors.foreground}
+    label-focused-foreground = ${colors.focused}
     label-focused-background = ${colors.background}
     label-focused-underline = ${colors.underline}
     label-visible-foreground = ${colors.active}
@@ -169,9 +170,9 @@
     label-separator = " "
     label-separator-foreground = ${colors.fg}
     menu-0-0 = ""
-    menu-0-0-exec = sudo reboot
+    menu-0-0-exec = reboot
     menu-0-1 = ""
-    menu-0-1-exec = sudo poweroff
+    menu-0-1-exec = poweroff
 
 [module/shot]
     type = custom/script
@@ -182,7 +183,7 @@
 [module/term]
     type = custom/script
     exec = echo " "
-    click-left = "urxvt"
+    click-left = "alacritty"
 
 [module/workspaces]
     type = internal/xworkspaces
