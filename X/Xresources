@@ -44,6 +44,7 @@ URxvt.keysym.Shift-Control-V:eval:paste_clipboard
 *.background: #000000
 *.background_transparency: #B3000000
 *.cursorColor: #ff3232
+*.focused: #df9614
 
 *.color0: #665c54
 *.color8: #928374
