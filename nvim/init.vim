@@ -123,7 +123,7 @@ nnoremap <F2> :NERDTreeFind<cr>
 nnoremap <F3> :NERDTreeToggle<cr>
 nnoremap <F12> :PlugInstall<cr>
 
-source ./ftplugin/arduino.vim
+source $HOME/.config/nvim/ftplugin/arduino.vim
 
 nnoremap <leader>r <Plug>(coc-rename)
 nnoremap <leader>ca <Plug>(coc-codelens-action)
