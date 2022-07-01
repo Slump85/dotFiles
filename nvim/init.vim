@@ -23,6 +23,7 @@ set shiftwidth=4 " Set shift width to 4 spaces.
 set tabstop=4 " Set tab width to 4 columns.
 set expandtab " Use space characters instead of tabs.
 set nobackup " Do not save backup files.
+set noswapfile " Do not save swap files.
 set scrolloff=10 " Do not let cursor scroll below or above N number of lines when scrolling.
 set nowrap " Do not wrap lines. Allow long lines to extend as far as the line goes.
 set incsearch " While searching though a file incrementally highlight matching characters as you type.
@@ -41,6 +42,7 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx " T
 
 call plug#begin('/home/slump/.config/nvim/plugins')
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'mikelue/vim-maven-plugin'
 Plug 'preservim/tagbar'
 Plug 'glepnir/dashboard-nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -48,12 +50,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'vim-airline/vim-airline'
 Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
 Plug 'frazrepo/vim-rainbow'
 Plug 'dense-analysis/ale'
+Plug 'stevearc/vim-arduino'
 call plug#end()
 
 " }}}
@@ -119,8 +123,16 @@ nnoremap <F2> :NERDTreeFind<cr>
 nnoremap <F3> :NERDTreeToggle<cr>
 nnoremap <F12> :PlugInstall<cr>
 
+source ./ftplugin/arduino.vim
+
+nnoremap <leader>r <Plug>(coc-rename)
+nnoremap <leader>ca <Plug>(coc-codelens-action)
+nnoremap <leader>f <Plug>(coc-format)
+nnoremap <leader>R <Plug>(coc-references)
+
 " Have nerdtree ignore certain files and directories.
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$', '\.tar$', '\.7z$', '\.tar.bz2$','\.docx','\.xlsx']
+let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 
 " }}}
 
@@ -153,6 +165,22 @@ augroup END
 
 " Activate rainbow bracket globaly
 let g:rainbow_active = 1
+
+" Define path to node
+let g:coc_node_path = "/usr/bin/node"
+
+luafile $HOME/.config/nvim/vimfiles/treesitter.lua
+
+" Open NERDTree without arg
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in”) | NERDTree | endif
+
+let NERDTreeAutoDeleteBuffer = 1
+"let NERDTreeMapOpenInTab'<ENTER>'
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+let g:coc_global_extensions = ['coc-json', 'coc-git']
 
 " }}}
 
