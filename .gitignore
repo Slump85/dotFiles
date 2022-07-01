@@ -39,3 +39,4 @@
 **/nvim/plugins
 **/nvim/backup
 **/nvim/node_modules
+**/coc/extensions
