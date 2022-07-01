@@ -36,4 +36,6 @@
 **/vlc/
 **/volumeicon/
 **/xfce4/
-
+**/nvim/plugins
+**/nvim/backup
+**/nvim/node_modules
