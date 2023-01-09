@@ -162,11 +162,12 @@ for_window [class="jetbrains-idea-ce"] move to workspace $ws5
 for_window [class="DBeaver"] move to workspace $ws6
 for_window [class="Thunderbird"] move to workspace $ws7
 for_window [class="Blender"] move to workspace $ws8 focus
-for_window [class="Transmission-gtk"] move to workspace $ws9
+for_window [class="Transmission-gtk|mkvtoolnix-gui"] move to workspace $ws9
 for_window [class="VirtualBox Manager|VirtualBox Machine"] move to workspace $ws10
 
 # Floating mode by default
 for_window [class="Transmission-gtk"] floating enable
+for_window [class="mkvtoolnix-gui"] floating enable
 for_window [class="VirtualBox Manager"] floating enable
 
 # Size of floating windows
