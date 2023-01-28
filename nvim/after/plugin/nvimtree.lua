@@ -7,7 +7,7 @@ nvim_tree.setup({
 	sort_by = "case_sensitive",
 	view = {
 		adaptive_size = true,
-		side = "right",
+		side = "left",
 		-- width = 30
 		mappings = {
 			list = {
