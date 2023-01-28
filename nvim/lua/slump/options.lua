@@ -30,7 +30,7 @@ local options = {
 	clipboard = "unnamedplus",
 	laststatus = 2, -- set to 3 for an unique lualine bar.
 	termguicolors = true, -- to enable highlight groups
-	updatetime = 1000,
+	updatetime = 50,
 	-- SAVING
 	backup = false,
 	writebackup = false,
@@ -42,6 +42,7 @@ local options = {
 	ignorecase = true,
 	smartcase = true,
 	hlsearch = false,
+	incsearch = true,
 	-- COMPLETION
 	wildignore = "*.o,*.r,*.so,*.sl",
 	completeopt = { "menu", "menuone", "noselect" }, -- need it for nvim-cmp
