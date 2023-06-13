@@ -14,7 +14,7 @@ local options = {
 	sidescrolloff = 10,
 	mouse = "a",
 	cursorline = true,
-	colorcolumn = "100",
+	colorcolumn = "80",
 	numberwidth = 4,
 	textwidth = 80,
 	shiftwidth = 2,
@@ -30,19 +30,18 @@ local options = {
 	clipboard = "unnamedplus",
 	laststatus = 2, -- set to 3 for an unique lualine bar.
 	termguicolors = true, -- to enable highlight groups
-	updatetime = 50,
+	updatetime = 1000,
 	-- SAVING
 	backup = false,
 	writebackup = false,
 	swapfile = false,
-	undodir = vim.fn.expand("~") .. "/.config/nvim/lua/slump/undodir",
+	undodir = vim.fn.expand("~") .. "/.config/nvim/lua/franck/undodir",
 	undofile = true,
 	undolevels = 500,
 	-- SEARCH
 	ignorecase = true,
 	smartcase = true,
 	hlsearch = false,
-	incsearch = true,
 	-- COMPLETION
 	wildignore = "*.o,*.r,*.so,*.sl",
 	completeopt = { "menu", "menuone", "noselect" }, -- need it for nvim-cmp

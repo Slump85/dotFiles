@@ -2,9 +2,9 @@
 CONFIG="$HOME/.config"
 I3="$CONFIG/i3/config"
 POLYBAR="$CONFIG/polybar/config"
-NVIM="$CONFIG/nvim/init.vim"
+nvim="$CONFIG/nvim/init.lua"
 YARN="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
-export PATH=$YARN:$CONFIG:$NVIM:$POLYBAR:$I3:$HOME/bin:/usr/local/bin:/usr/bin:$PATH
+export PATH=$YARN:$CONFIG:$POLYBAR:$I3:$HOME/bin:/usr/local/bin:/usr/bin:$PATH
 
 # Applications
 export EDITOR="nvim"
