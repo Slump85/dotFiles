@@ -40,3 +40,4 @@
 **/nvim/backup
 **/nvim/node_modules
 **/coc/extensions
+**/tmux/plugins
