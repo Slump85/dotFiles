@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>w", ":w <Cr>")
+vim.keymap.set("n", "<leader>q", ":q <Cr>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -50,7 +51,9 @@ vim.keymap.set("n", "<leader>pv", "<cmd> NvimTreeToggle <CR>")
 -- focus
 vim.keymap.set("n", "<leader>e", "<cmd> NvimTreeFocus <CR>")
 
--- bufferline
-vim.keymap.set("n", "<Tab>", "<cmd> BufferLineCycleNext <CR>")
-vim.keymap.set("n", "<S-Tab>", "<cmd> BufferLineCyclePrev <CR>")
+-- barbar
+vim.keymap.set("n", "<Tab>", "<cmd> BufferNext <CR>")
+vim.keymap.set("n", "<S-Tab>", "<cmd> BufferPrev <CR>")
+vim.keymap.set("n", "<A-l>", "<cmd> BufferMoveNext <CR>")
+vim.keymap.set("n", "<A-h>", "<cmd> BufferMovePrev <CR>")
 --vim.keymap.set("n", "<leader>x", "<cmd> bd <CR>")

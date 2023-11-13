@@ -85,10 +85,10 @@ _G.packer_plugins = {
     path = "/home/fvl/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["bufferline.nvim"] = {
+  ["barbar.nvim"] = {
     loaded = true,
-    path = "/home/fvl/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
+    path = "/home/fvl/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
   },
   catppuccin = {
     config = { "\27LJ\2\n@\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0!colorscheme catppuccin-mocha\bcmd\bvim\0" },
@@ -111,6 +111,16 @@ _G.packer_plugins = {
     path = "/home/fvl/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/fvl/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/fvl/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/fvl/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -130,6 +140,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fvl/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/home/fvl/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -171,6 +186,14 @@ _G.packer_plugins = {
     path = "/home/fvl/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["telescope-fzf-native.nvim"] = {
+    cond = { "\27LJ\2\nK\0\0\3\0\4\1\v6\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\2\b\0\0\0X\0\2€+\0\1\0X\1\1€+\0\2\0L\0\2\0\tmake\15executable\afn\bvim\2\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = true,
+    path = "/home/fvl/.local/share/nvim/site/pack/packer/opt/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
   ["telescope-media-files.nvim"] = {
     loaded = true,
     path = "/home/fvl/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
@@ -186,10 +209,20 @@ _G.packer_plugins = {
     path = "/home/fvl/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-sleuth"] = {
+    loaded = true,
+    path = "/home/fvl/.local/share/nvim/site/pack/packer/start/vim-sleuth",
+    url = "https://github.com/tpope/vim-sleuth"
+  },
   ["vim-tmux-navigator"] = {
     loaded = true,
     path = "/home/fvl/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
     url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/fvl/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
@@ -202,6 +235,10 @@ time([[Config for catppuccin]], false)
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Conditional loads
+time([[Conditional loading of telescope-fzf-native.nvim]], true)
+  require("packer.load")({"telescope-fzf-native.nvim"}, {}, _G.packer_plugins)
+time([[Conditional loading of telescope-fzf-native.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

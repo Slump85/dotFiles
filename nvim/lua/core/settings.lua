@@ -14,6 +14,13 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
+vim.opt.clipboard = 'unnamedplus'
+
+-- Keep signcolumn on by default
+vim.wo.signcolumn = 'yes'
+
+-- Set completeopt to have a better completion experience
+vim.opt.completeopt = 'menuone,noselect'
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
