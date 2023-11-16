@@ -4,8 +4,8 @@
 #
 # Executed by startx (run your window manager from here)
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+userresources=$HOME/.config/X/.Xresources
+usermodmap=$HOME/.config/X/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -64,6 +64,5 @@ get_session(){
 	echo "dbus-launch ${dbus_args[*]}"
 }
 
-#exec $(get_session "$1")
-exec dwm
-xset r rate 660 25
+exec $(get_session "$1")
+# xset r rate 660 25

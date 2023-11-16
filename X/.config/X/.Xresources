@@ -8,10 +8,10 @@ Xft.rgba:subpixel
 Xft.hinting:true
 Xft.hintstyle:hintslight
 Xft.lcdfilter:lcddefault
-*font: xft:JetBrains Mono:style=Regular:size=16
-*boldFont: xft:JetBrains Mono:style=Bold:size=16
-*italicFont: xft:JetBrains Mono:style=Italic:size=16
-*boldItalicfont: xft:JetBrains Mono:style=Bold Italic:size=16
+*font: xft:JetBrainsMonoNerdFont:style=Regular:size=16
+*boldFont: xft:JetBrainsMonoNerdFont:style=Bold:size=16
+*italicFont: xft:JetBrainsMonoNerdFont:style=Italic:size=16
+*boldItalicfont: xft:JetBrainsMonoNerdFont:style=Bold Italic:size=16
 
 ! ===================
 !       urxvt
@@ -32,10 +32,10 @@ Xft.lcdfilter:lcddefault
 ! URxvt.depth: 32
 ! URxvt.background:[70]#000000
 
-URxvt.keysym.C-equal:resize-font:bigger
-URxvt.keysym.C-minus:resize-font:smaller
-URxvt.keysym.Shift-Control-C:eval:selection_to_clipboard
-URxvt.keysym.Shift-Control-V:eval:paste_clipboard
+! URxvt.keysym.C-equal:resize-font:bigger
+! URxvt.keysym.C-minus:resize-font:smaller
+! URxvt.keysym.Shift-Control-C:eval:selection_to_clipboard
+! URxvt.keysym.Shift-Control-V:eval:paste_clipboard
 
 ! ============
 !   Couleurs

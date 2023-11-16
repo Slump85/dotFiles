@@ -42,8 +42,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $Win
 
 # start a terminal
-#bindsym $Win+Return exec urxvt
-bindsym $Win+Return exec alacritty
+bindsym $Win+Return exec kitty
 
 # kill focused window
 bindsym $Win+q kill
@@ -153,19 +152,18 @@ exec_always --no-startup-id $HOME/.config/polybar/launchBar.sh
 exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/background.png
 
 # Assign Programs to workspaces
-for_window [class="URxvt"] move to workspace $ws1 focus
-for_window [class="Thunar"] move to workspace $ws2 focus
-for_window [class="Brave-browser"] move to workspace $ws3
-for_window [class="Code"] move to workspace $ws4
-for_window [class="jetbrains-idea-ce"] move to workspace $ws5
-for_window [class="DBeaver"] move to workspace $ws6
-for_window [class="Thunderbird"] move to workspace $ws7
-for_window [class="Blender"] move to workspace $ws8 focus
-for_window [class="Transmission-gtk|mkvtoolnix-gui"] move to workspace $ws9
-for_window [class="VirtualBox Manager|VirtualBox Machine"] move to workspace $ws10
+for_window [class="kitty|Thunar"] move to workspace $ws1 focus
+for_window [class="Brave-browser"] move to workspace $ws2
+for_window [class="Code"] move to workspace $ws3
+for_window [class="jetbrains-idea-ce"] move to workspace $ws4
+for_window [class="DBeaver"] move to workspace $ws5
+for_window [class="Thunderbird"] move to workspace $ws6
+for_window [class="Blender"] move to workspace $ws7 focus
+for_window [class="transmission-gtk|mkvtoolnix-gui"] move to workspace $ws8
+for_window [class="VirtualBox Manager|VirtualBox Machine"] move to workspace $ws9
 
 # Floating mode by default
-for_window [class="Transmission-gtk"] floating enable
+for_window [class="transmission-gtk"] floating enable
 for_window [class="mkvtoolnix-gui"] floating enable
 for_window [class="VirtualBox Manager"] floating enable
 
@@ -174,12 +172,8 @@ floating_minimum_size 400 x 300
 floating_maximum_size 1600 x 1200
 
 # Launching app on startup
-exec alacritty
+exec kitty
 exec brave 
-exec code
-exec transmission-gtk
-exec idea
-exec virtualbox
 
 # Keyboard layout
 exec --no-startup-id setxkbmap -layout "us" -variant "alt-intl"
@@ -188,7 +182,7 @@ exec --no-startup-id setxkbmap -layout "us" -variant "alt-intl"
 exec_always --no-startup-id dunst
 
 # Windows Compositor
-exec_always --no-startup-id picom --experimental-backends -b --config $HOME/.config/picom.conf
+exec_always --no-startup-id picom -b --config $HOME/.config/picom/picom.conf
 
 #gaps
 gaps inner 10
@@ -204,10 +198,10 @@ popup_during_fullscreen smart
 # Colors
 
 # class                 border      backgr.     text        indicator   child_border
-client.focused          #282828     #282828     #fbf1c7     #282828     #282828
-client.focused_inactive #282828     #5f676a     #fbf1c7     #484e50     #5f676a
-client.unfocused        #282828     #222222     #888888     #292d2e     #222222
-client.urgent           #2f343a     #ea6962     #fbf1c7     #ea6962     #ea6962
-client.placeholder      #000000     #0c0c0c     #fbf1c7     #000000     #0c0c0c
-
-client.background       #282828
+# client.focused          #282828     #282828     #fbf1c7     #282828     #282828
+# client.focused_inactive #282828     #5f676a     #fbf1c7     #484e50     #5f676a
+# client.unfocused        #282828     #222222     #888888     #292d2e     #222222
+# client.urgent           #2f343a     #ea6962     #fbf1c7     #ea6962     #ea6962
+# client.placeholder      #000000     #0c0c0c     #fbf1c7     #000000     #0c0c0c
+#
+# client.background       #282828
