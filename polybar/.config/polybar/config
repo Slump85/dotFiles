@@ -56,9 +56,9 @@ font-3 = Font Awesome 6 Free:pixelsize=16;0
 font-4 = Font Awesome 6 Free Solid:pixelsize=16;0
 font-5 = Font Awesome 6 Brands:pixelsize=16;0
 
-modules-left = powermenu xwindow
+modules-left = powermenu i3 xwindow
 modules-right = xkeyboard backlight pulseaudio filesystem memory cpu date
-modules-center = xworkspaces i3 
+modules-center = xworkspaces
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -185,14 +185,14 @@ menu-0-1 = 
 menu-0-1-exec = systemctl reboot
 menu-0-1-foreground = ${colors.alert}
 
-[module/gpu]
-type = custom/script
-exec = gpu_term
-interval = 5
-label = %output%°C
-format-prefix = "TG "
-format-prefix-foreground = ${colors.primary}
-click-left = exec nvidia-settings
+# [module/gpu]
+# type = custom/script
+# exec = gpu_term
+# interval = 5
+# label = %output%°C
+# format-prefix = "TG "
+# format-prefix-foreground = ${colors.primary}
+# click-left = exec nvidia-settings
 
 # [module/battery]
 # type = internal/battery
@@ -244,7 +244,7 @@ click-left = exec nvidia-settings
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:60:...%
+label = %title:0:100:...%
 
 [module/filesystem]
 type = internal/fs
