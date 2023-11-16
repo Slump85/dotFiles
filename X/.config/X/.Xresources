@@ -1,0 +1,107 @@
+
+! =================
+!       Xft
+! =================
+Xft.dpi:96
+Xft.antialias:true
+Xft.rgba:subpixel
+Xft.hinting:true
+Xft.hintstyle:hintslight
+Xft.lcdfilter:lcddefault
+*font: xft:JetBrains Mono:style=Regular:size=16
+*boldFont: xft:JetBrains Mono:style=Bold:size=16
+*italicFont: xft:JetBrains Mono:style=Italic:size=16
+*boldItalicfont: xft:JetBrains Mono:style=Bold Italic:size=16
+
+! ===================
+!       urxvt
+! ===================
+! URxvt.perl-ext-common:resize-font,default,matcher,url-select
+! URxvt.url-select.launcher: /usr/bin/xdg-open
+! URxvt.url-select.underline:true
+! URxvt.matcher.button: 1
+! URxvt*scrollBar:false
+! URxvt*scrollBar_right:false
+! URxvt*letterSpace:0
+! URxvt*lineSpace:0
+! URxvt.internalBorder:50
+! URxvt.geometry: 92x24
+! URxvt*cursorBlink:true
+! URxvt.iso14755:false
+! URxvt*utf8:true
+! URxvt.depth: 32
+! URxvt.background:[70]#000000
+
+URxvt.keysym.C-equal:resize-font:bigger
+URxvt.keysym.C-minus:resize-font:smaller
+URxvt.keysym.Shift-Control-C:eval:selection_to_clipboard
+URxvt.keysym.Shift-Control-V:eval:paste_clipboard
+
+! ============
+!   Couleurs
+! ============
+! *.foreground: #fbf1c7
+! *.background: #282828
+! *.background_transparency: #B3000000
+! *.cursorColor: #ff3232
+! *.focused: #df9614
+!
+! *.color0: #665c54
+! *.color8: #928374
+! *.color1: #ea6962
+! *.color9: #ea6962
+! *.color2: #a9b665
+! *.color10: #a9b665
+! *.color3: #e78a4e
+! *.color11: #d8a657
+! *.color4: #7daea3
+! *.color12: #7daea3
+! *.color5: #d3869b
+! *.color13: #d3869b
+! *.color6: #89b482
+! *.color14: #89b482
+! *.color7: #d4be98
+! *.color15: #d4be98
+xterm*selectToClipboard: true
+xterm*disallowedWindowOps: 20,21,SetXProp
+*.alpha: 0.90
+
+! colors
+
+! special
+*.foreground:   #B8BEC9
+*.background:   #212121
+*.cursorColor:  #ECEFF4
+*.revCursorColor:  #555555
+
+! black
+*.color0:       #4C566A
+*.color8:       #6C768A
+
+! red
+*.color1:       #BF616A
+*.color9:       #af7370
+
+! green
+*.color2:       #A3BE8C
+*.color10:      #B5CEA8
+
+! yellow
+*.color3:       #D7BA7D
+*.color11:      #E7cb93
+
+! blue
+*.color4:       #5e81ac
+*.color12:      #69A8C6
+
+! magenta
+*.color5:       #B48EAD
+*.color13:      #939ede
+
+! cyan
+*.color6:       #88c0d0
+*.color14:      #69BAC8
+
+! white
+*.color7:       #ABB2BF
+*.color15:      #D8DEE9
