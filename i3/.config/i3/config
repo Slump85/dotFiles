@@ -12,6 +12,7 @@
 
 set $Win Mod4
 set $Alt Mod1
+set $term kitty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -52,22 +53,22 @@ bindsym $Win+space exec "rofi -modi drun,run -show drun -show-icons"
 #bindsym $Win+space exec dmenu_run
 
 # alternatively, you can use the cursor keys:
-bindsym $Win+Left focus left
-bindsym $Win+Down focus down
-bindsym $Win+Up focus up
-bindsym $Win+Right focus right
+bindsym $Win+h focus left
+bindsym $Win+j focus down
+bindsym $Win+k focus up
+bindsym $Win+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $Win+Shift+Left move left
-bindsym $Win+Shift+Down move down
-bindsym $Win+Shift+Up move up
-bindsym $Win+Shift+Right move right
+bindsym $Win+Shift+h move left
+bindsym $Win+Shift+j move down
+bindsym $Win+Shift+k move up
+bindsym $Win+Shift+l move right
 
 # split in horizontal orientation
-bindsym $Win+h split h
+bindsym $Win+$Alt+H split h
 
 # split in vertical orientation
-bindsym $Win+v split v
+bindsym $Win+$Alt+V split v
 
 # enter fullscreen mode for the focused container
 bindsym $Win+f fullscreen toggle
