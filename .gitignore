@@ -29,15 +29,11 @@
 **/pulse/
 **/qpdfview/
 **/qt5ct/
-**/rofi/
 **/transmission/
 **/user-dirs.dirs
 **/user-dirs.locale
 **/vlc/
 **/volumeicon/
 **/xfce4/
-**/nvim/plugins
-**/nvim/backup
-**/nvim/node_modules
 **/coc/extensions
 **/tmux/plugins
