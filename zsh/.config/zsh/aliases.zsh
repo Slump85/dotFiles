@@ -28,3 +28,8 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 alias df='df -h'
+alias du='du -h'
+
+# pacman
+alias install='sudo pacman -S'
+alias uninstall='sudo pacman -Rsn'
