@@ -65,10 +65,10 @@ bindsym $Win+Shift+k move up
 bindsym $Win+Shift+l move right
 
 # split in horizontal orientation
-bindsym $Win+$Alt+H split h
+bindsym $Win+$Alt+h split h
 
 # split in vertical orientation
-bindsym $Win+$Alt+V split v
+bindsym $Win+$Alt+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $Win+f fullscreen toggle
