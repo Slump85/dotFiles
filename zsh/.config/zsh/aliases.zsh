@@ -1,5 +1,9 @@
 #!/bin/sh
 
+export i3='nvim ~/.config/i3/config'
+export polybar='nvim ~/.config/polybar/config'
+export dotfiles='cd ~/dotFiles/'
+
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -la'
