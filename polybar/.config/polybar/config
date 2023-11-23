@@ -185,6 +185,11 @@ menu-0-1 = 
 menu-0-1-exec = systemctl reboot
 menu-0-1-foreground = ${colors.alert}
 
+; exit
+menu-0-2 = 
+menu-0-2-exec = systemctl reboot
+menu-0-2-foreground = ${colors.alert}
+
 # [module/gpu]
 # type = custom/script
 # exec = gpu_term
@@ -266,9 +271,9 @@ format-volume = <label-volume>
 
 label-volume = %percentage%%
 
-label-muted = muted
+label-muted = " muted"
 label-muted-foreground = ${colors.disabled}
-click-right = exec pavucontrol
+click-right = exec kitty -e alsamixer
 
 [module/xkeyboard]
 format = <label-indicator> <label-layout>
@@ -286,7 +291,7 @@ label-indicator-background = ${colors.secondary}
 [module/memory]
 type = internal/memory
 interval = 10
-format-prefix = "RAM"
+format-prefix = "RAM "
 format-prefix-foreground = ${colors.primary}
 label = %percentage_used:2%%
 
