@@ -17,8 +17,8 @@ alias update-arch='sudo pacman -Syy && sudo pacman -Syu && yay'
 alias clean-arch='yay -sc && sudo pacman -Rns $(pacman -qdtq) && flatpak remove --unused'
 alias fix-key='sudo rm /var/lib/pacman/sync/* && sudo rm -rf /etc/pacman.d/gnupg/* && sudo pacman-key --init && sudo pacman-key --populate && sudo pacman -sy --noconfirm archlinux-keyring'
 
-alias full-hd='xrandr --output dvi-d-0 --off --output hdmi-0 --off --output dp-0 --mode 1920x1080 --pos 0x0 --rotate normal --output dp-1 --off'
-alias full='xrandr --output dvi-d-0 --off --output hdmi-0 --off --output dp-0 --mode 3840x2160 --pos 0x0 --rotate normal --output dp-1 --off'
+alias full-hd="xrandr --output DVI-D-0 --off --output HDMI-0 --off --output DP-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off"
+alias full='xrandr --output DVI-D-0 --off --output HDMI-0 --off --output DP-0 --mode 3840x2160 --pos 0x0 --rotate normal --output DP-1 --off'
 
 alias lg='lazygit'
 alias g='git'
