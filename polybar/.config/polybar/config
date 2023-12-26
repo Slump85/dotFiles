@@ -17,13 +17,20 @@
 ;==========================================================
 
 [colors]
-background = #BF282A2E
-background-alt = #373B41
-foreground = #C5C8C6
+; background = #BF282A2E
+background = #BF002B36
+background-alt = #073642
+foreground = #ADB8B8
 primary = #F0C674
 secondary = #8ABEB7
 alert = #A54242
 disabled = #707880
+yellow=#FFC100
+orange=#A13C11
+red=#B7211F
+blue=#1B6497
+green=#859900
+violet=#494FB6
 
 [bar/default]
 monitor = ${env:MONITOR:}
@@ -34,6 +41,7 @@ radius = 0
 ; dpi = 96
 
 background = ${colors.background}
+; background = ${xrdb:background}
 foreground = ${colors.foreground}
 
 line-size = 3pt
@@ -47,14 +55,12 @@ padding-right = 1
 module-margin = 1
 
 separator = |
-separator-foreground = ${colors.disabled}
+separator-foreground = ${colors.red}
 
 font-0 = JetBrainsMonoNerdFont:pixelsize=16;0
-font-1 = unifont:fontformat=truetype:size=14:antialias=true;0
-font-2 = siji:pixelsize=14;1
-font-3 = Font Awesome 6 Free:pixelsize=16;0
-font-4 = Font Awesome 6 Free Solid:pixelsize=16;0
-font-5 = Font Awesome 6 Brands:pixelsize=16;0
+font-1 = Font Awesome 6 Free:pixelsize=16;0
+font-2 = Font Awesome 6 Free Solid:pixelsize=16;0
+font-3 = Font Awesome 6 Brands:pixelsize=16;0
 
 modules-left = powermenu i3 xwindow
 modules-right = xkeyboard backlight pulseaudio filesystem memory cpu date
@@ -81,7 +87,7 @@ wm-restack = i3
 type = internal/temperature
 format = <label>
 format-prefix = "TC "
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = ${colors.green}
 interval = 5
 ; Seconds to sleep between updates
 ; Default: 1
@@ -99,7 +105,7 @@ base-temperature = 20
 [module/i3]
 type = internal/i3
 format = <label-mode>
-label-mode-foreground = ${colors.primary}
+label-mode-foreground = ${colors.green}
 pin-workspaces = true
 
 [module/backlight]
@@ -147,14 +153,14 @@ pin-workspaces = true
 
 label-active = %name%
 label-active-background = ${colors.background-alt}
-label-active-underline= ${colors.primary}
+label-active-underline= ${colors.yellow}
 label-active-padding = 1
 
 label-occupied = %name%
 label-occupied-padding = 1
 
 label-urgent = %name%
-label-urgent-background = ${colors.alert}
+label-urgent-background = ${colors.red}
 label-urgent-padding = 1
 
 label-empty = %name%
@@ -166,29 +172,29 @@ type = custom/menu
 
 expand-right = true
 
-format-foreground = ${colors.primary}
+format-foreground = ${colors.violet}
 format-background = ${colors.background}
 
 label-open = ⏾
 label-open-font = 4
 label-close = 
 label-separator = " | "
-label-separator-foreground = ${colors.disabled}
+label-separator-foreground = ${colors.red}
 
 ; shutdown
 menu-0-0 = 
 menu-0-0-exec = systemctl poweroff
-menu-0-0-foreground = ${colors.alert}
+menu-0-0-foreground = ${colors.red}
 
 ; reboot
 menu-0-1 = 
 menu-0-1-exec = systemctl reboot
-menu-0-1-foreground = ${colors.alert}
+menu-0-1-foreground = ${colors.red}
 
 ; exit
 menu-0-2 = 
 menu-0-2-exec = systemctl reboot
-menu-0-2-foreground = ${colors.alert}
+menu-0-2-foreground = ${colors.red}
 
 # [module/gpu]
 # type = custom/script
@@ -257,7 +263,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#F0C674} %{F-} %percentage_used%%
+label-mounted = %{F#859900} %{F#2AA198} %percentage_used%%
 
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.disabled}
@@ -266,7 +272,7 @@ label-unmounted-foreground = ${colors.disabled}
 type = internal/pulseaudio
 
 format-volume-prefix = "墳 "
-format-volume-prefix-foreground = ${colors.primary}
+format-volume-prefix-foreground = ${colors.green}
 format-volume = <label-volume>
 
 label-volume = %percentage%%

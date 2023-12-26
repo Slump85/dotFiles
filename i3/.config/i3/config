@@ -135,10 +135,10 @@ bindsym $Win+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # same bindings, but for the arrow keys
-        bindsym Right resize shrink width 10 px or 10 ppt
-        bindsym Up resize grow height 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
-        bindsym Left resize grow width 10 px or 10 ppt
+        bindsym l resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
         # back to normal: Enter or Escape or $Win+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -150,13 +150,13 @@ bindsym $Win+r mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launchBar.sh
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/background.png
+exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/japanese-park.jpg
 
 # Assign Programs to workspaces
 for_window [class="kitty|Thunar"] move to workspace $ws1 focus
 for_window [class="Brave-browser"] move to workspace $ws2
 for_window [class="Code"] move to workspace $ws3
-for_window [class="jetbrains-idea-ce"] move to workspace $ws4
+for_window [class="jetbrains-idea-ce|steam"] move to workspace $ws4
 for_window [class="DBeaver"] move to workspace $ws5
 for_window [class="Thunderbird"] move to workspace $ws6
 for_window [class="Blender"] move to workspace $ws7 focus
@@ -188,7 +188,7 @@ exec_always --no-startup-id picom -b --config $HOME/.config/picom/picom.conf
 #gaps
 gaps inner 10
 gaps outer 7
-for_window [class="."] border pixel 2
+for_window [class="."] border pixel 4
 #smart_gaps on
 smart_borders on
 hide_edge_borders smart_no_gaps
@@ -199,10 +199,10 @@ popup_during_fullscreen smart
 # Colors
 
 # class                 border      backgr.     text        indicator   child_border
-# client.focused          #282828     #282828     #fbf1c7     #282828     #282828
-# client.focused_inactive #282828     #5f676a     #fbf1c7     #484e50     #5f676a
-# client.unfocused        #282828     #222222     #888888     #292d2e     #222222
+client.focused          #B7211F     #B7211F     #fbf1c7     #B7211F     #B7211F
+client.focused_inactive #A13C11     #A13C11     #fbf1c7     #A13C11     #A13C11
+client.unfocused        #25285B     #25285B     #888888     #292d2e     #25285B
 # client.urgent           #2f343a     #ea6962     #fbf1c7     #ea6962     #ea6962
 # client.placeholder      #000000     #0c0c0c     #fbf1c7     #000000     #0c0c0c
 #
-# client.background       #282828
+client.background       #282828
