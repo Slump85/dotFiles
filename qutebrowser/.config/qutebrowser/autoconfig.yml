@@ -6,20 +6,7 @@
 
 config_version: 2
 settings:
-  bindings.commands:
-    global:
-      normal:
-        xb: config-cycle statusbar.hide
-        xt: config-cycle tabs.show always switching
-        xx: config-cycle statusbar.hide ;; config-cycle tabs.show always switching
-  content.blocking.method:
-    global: both
-  downloads.location.directory:
-    global: /home/franck/Downloads
+  statusbar.show:
+    global: always
   tabs.show:
     global: always
-  statusbar.hide:
-    global: false
-  url.searchengines:
-    global:
-      DEFAULT: https://duckduckgo.com/?q={}

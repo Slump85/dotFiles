@@ -199,10 +199,10 @@ popup_during_fullscreen smart
 # Colors
 
 # class                 border      backgr.     text        indicator   child_border
-client.focused          #B7211F     #B7211F     #fbf1c7     #B7211F     #B7211F
-client.focused_inactive #A13C11     #A13C11     #fbf1c7     #A13C11     #A13C11
-client.unfocused        #25285B     #25285B     #888888     #292d2e     #25285B
+# client.focused          #B7211F     #B7211F     #fbf1c7     #B7211F     #B7211F
+# client.focused_inactive #A13C11     #A13C11     #fbf1c7     #A13C11     #A13C11
+# client.unfocused        #25285B     #25285B     #888888     #292d2e     #25285B
 # client.urgent           #2f343a     #ea6962     #fbf1c7     #ea6962     #ea6962
 # client.placeholder      #000000     #0c0c0c     #fbf1c7     #000000     #0c0c0c
 #
-client.background       #282828
+# client.background       #282828

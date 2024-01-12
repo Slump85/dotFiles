@@ -3,18 +3,18 @@ local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 
 -- get the current OS
 local os
-local install_path
+local style_path
 local lombok_path
 local java_path
 local home
+local keymap = vim.keymap
 
 if vim.fn.has('mac') == 1 then
   os = 'mac'
 elseif vim.fn.has('unix') == 1 then
   os = 'linux'
-  home = '$HOME'
+  home = '/home/franck/'
   java_path = '/usr/lib/jvm/java-17-openjdk/bin/java'
-  install_path = home .. '/jdtls/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/' -- A changer des que possible. Mettre le dossier eclipse.jdt.ls dans .local/share/eclipse
   lombok_path = home .. '/.local/share/eclipse/lombok.jar'
   style_path = home .. '/.local/share/eclipse/'
 elseif vim.fn.has('win32') == 1 then
@@ -26,8 +26,12 @@ elseif vim.fn.has('win32') == 1 then
 end
 
 local workspace_dir = home .. 'Projets/workspaces/' .. project_name
-local jar_path = home .. 'plugins/org.eclipse.equinox.launcher_1.6.600.v20231106-1826.jar'
+local jar_path = home .. '/.local/share/eclipse/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_1.6.600.v20231106-1826.jar'
 local config_path = home .. 'config_'
+
+keymap.set("n", "<leader>m", "<CMD>Maven<CR>")
+keymap.set("n", "<leader>me", "<CMD>MavenExec<CR>")
+keymap.set("n", "<leader>m", "<CMD>Maven<CR>")
 
 local config = {
   -- The command that starts the language server
