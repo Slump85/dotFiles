@@ -155,8 +155,8 @@ exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/japanese-par
 # Assign Programs to workspaces
 for_window [class="kitty|Thunar"] move to workspace $ws1 focus
 for_window [class="Brave-browser"] move to workspace $ws2
-for_window [class="Code"] move to workspace $ws3
-for_window [class="jetbrains-idea-ce|steam"] move to workspace $ws4
+for_window [class="Code|jetbrains-idea-ce"] move to workspace $ws3
+for_window [class="Lutris|steam"] move to workspace $ws4
 for_window [class="DBeaver"] move to workspace $ws5
 for_window [class="Thunderbird"] move to workspace $ws6
 for_window [class="Blender"] move to workspace $ws7 focus
