@@ -9,9 +9,7 @@ local java_path
 local home
 local keymap = vim.keymap
 
-if vim.fn.has('mac') == 1 then
-  os = 'mac'
-elseif vim.fn.has('unix') == 1 then
+if vim.fn.has('unix') == 1 then
   os = 'linux'
   home = '/home/franck/'
   java_path = '/usr/lib/jvm/java-17-openjdk/bin/java'

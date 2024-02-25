@@ -50,3 +50,6 @@ opt.foldlevel = 20
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()" -- Utilize Treesitter folds
 
+-- Scrolling
+opt.scrolloff=10
+opt.sidescrolloff=10
