@@ -32,13 +32,20 @@ blue=#1B6497
 green=#859900
 violet=#494FB6
 
+; ██████╗  █████╗ ██████╗ 
+; ██╔══██╗██╔══██╗██╔══██╗
+; ██████╔╝███████║██████╔╝
+; ██╔══██╗██╔══██║██╔══██╗
+; ██████╔╝██║  ██║██║  ██║
+; ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+
 [bar/default]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 24pt
+height = 20pt
 radius = 0
 
-; dpi = 96
+dpi = 157 
 
 background = ${colors.background}
 ; background = ${xrdb:background}
@@ -57,12 +64,12 @@ module-margin = 1
 separator = |
 separator-foreground = ${colors.red}
 
-font-0 = JetBrainsMonoNerdFont:pixelsize=16;0
-font-1 = Font Awesome 6 Free:pixelsize=16;0
-font-2 = Font Awesome 6 Free Solid:pixelsize=16;0
-font-3 = Font Awesome 6 Brands:pixelsize=16;0
+font-0 = JetBrainsMonoNerdFont:pixelsize=14;0
+font-1 = Font Awesome 6 Free:pixelsize=14;0
+font-2 = Font Awesome 6 Free Solid:pixelsize=14;0
+font-3 = Font Awesome 6 Brands:pixelsize=14;0
 
-modules-left = powermenu i3 xwindow
+modules-left = sysmenu powermenu i3 xwindow
 modules-right = xkeyboard backlight pulseaudio filesystem memory cpu date
 modules-center = xworkspaces
 
@@ -76,12 +83,26 @@ tray-maxsize = 25
 tray-scale = 1.0
 tray-padding = 1
 
-
-; wm-restack = generic
-; wm-restack = bspwm
 wm-restack = i3
+override-redirect = false
 
-; override-redirect = true
+; ███╗   ███╗ ██████╗ ██████╗ ██╗   ██╗██╗     ███████╗███████╗
+; ████╗ ████║██╔═══██╗██╔══██╗██║   ██║██║     ██╔════╝██╔════╝
+; ██╔████╔██║██║   ██║██║  ██║██║   ██║██║     █████╗  ███████╗
+; ██║╚██╔╝██║██║   ██║██║  ██║██║   ██║██║     ██╔══╝  ╚════██║
+; ██║ ╚═╝ ██║╚██████╔╝██████╔╝╚██████╔╝███████╗███████╗███████║
+; ╚═╝     ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚══════╝
+
+[module/sysmenu]
+type = custom/text
+
+content = 
+;;content-background = ${color.bg}
+content-foreground = ${colors.color3}
+content-padding = 1
+
+click-left = exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.sh -show system -theme themes/system-menu
+click-right = exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.sh -show system -theme themes/system-menu
 
 [module/temperature]
 type = internal/temperature

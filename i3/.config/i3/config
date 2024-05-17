@@ -12,7 +12,7 @@
 
 set $Win Mod4
 set $Alt Mod1
-set $term kitty
+set $term alacritty
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -147,13 +147,13 @@ mode "resize" {
 bindsym $Win+r mode "resize"
 
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launchBar.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Wallpaper
 exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/japanese-park.jpg
 
 # Assign Programs to workspaces
-for_window [class="kitty|Thunar"] move to workspace $ws1 focus
+for_window [class="Alacritty|Thunar"] move to workspace $ws1 focus
 for_window [class="Brave-browser"] move to workspace $ws2
 for_window [class="Code|jetbrains-idea-ce"] move to workspace $ws3
 for_window [class="Lutris|steam"] move to workspace $ws4
@@ -165,7 +165,7 @@ for_window [class="VirtualBox Manager|VirtualBox Machine"] move to workspace $ws
 
 # Floating mode by default
 for_window [class="transmission-gtk"] floating enable
-for_window [class="mkvtoolnix-gui"] floating enable
+#for_window [class="mkvtoolnix-gui"] floating enable
 #for_window [class="VirtualBox Manager"] floating enable
 
 # Size of floating windows
@@ -175,7 +175,7 @@ floating_maximum_size 1600 x 1200
 # Launching app on startup
 exec $term
 exec brave 
-exec --no-startup-id udiskie
+exec_always --no-startup-id udiskie
 
 # Keyboard layout
 exec --no-startup-id setxkbmap -layout "us" -variant "alt-intl"
@@ -187,9 +187,8 @@ exec_always --no-startup-id dunst
 exec_always --no-startup-id picom -b --config $HOME/.config/picom/picom.conf --experimental-backends
 
 # Lock Screen
-bindsym $mod+l exec betterlockscreen -l dim
 
-#gaps
+#gap
 gaps inner 10
 gaps outer 7
 for_window [class="."] border pixel 2
